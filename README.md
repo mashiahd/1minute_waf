@@ -17,7 +17,8 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
   - [License](#license)
 
 ## Features
-
+- Direct install on host or vm using vm script
+- Install on Proxmox 
 - Install Nginx with ModSecurity 3 support
 - Automatic detection and removal of prior Nginx installations
 - Customizable Nginx and ModSecurity versions
@@ -32,8 +33,17 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 
 ## Installation
 
-Clone the repository to your local machine:
+Download and install via bash on you local machine:
 
 ```bash
-git clone https://github.com/yourusername/1minwaf.git
-cd 1minwaf
+sudo bash -c "$(wget -qLO - https://api.int.mashiahs.com/downloads/automation/modsec-nginx.sh)"
+
+## Usage
+If cloned run the script with or without command-line arguments:
+
+```bash
+sudo chmod +x install_waf.sh
+sudo ./modsec-nginx.sh [options]
+
+
+
