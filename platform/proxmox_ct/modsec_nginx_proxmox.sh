@@ -97,6 +97,8 @@ else
 	exit 1
 fi
 
+description
+
 output=$(pct exec $CT_ID -- hostname -I 2>&1)
 if [[ $? -eq 0 && -n "$output" ]]; then
 	echo -e "${BLUE}[🖧] Network Connected: ${NC}${WHITE}$output${NC}"
