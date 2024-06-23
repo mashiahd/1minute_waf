@@ -19,7 +19,10 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
   - [License](https://github.com/mashiahd/1minute_waf/blob/main/LICENSE)
 
 ## Features
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6593561a0c8db99efa4b3673d017d4dc1c00b88f
 - Direct install on host or vm using vm script
 - Install on Proxmox 
 - Install Nginx with ModSecurity 3 support
@@ -40,6 +43,7 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 
 ## Installation
 
+<<<<<<< HEAD
 ### Host/VM
 
 Option 1:
@@ -103,5 +107,19 @@ If you encounter any issues during the installation, check the `1minwaf_install.
 Common issues:
 - Ensure you have root privileges to run the script.
 - Check your network connection for downloading necessary files.
+=======
+Download and install via bash on you local machine:
+
+```bash
+sudo bash -c "$(wget -qLO - https://api.int.mashiahs.com/downloads/automation/modsec-nginx.sh)"
+
+## Usage
+If cloned run the script with or without command-line arguments:
+
+```bash
+sudo chmod +x install_waf.sh
+sudo ./modsec-nginx.sh [options]
+
+>>>>>>> 6593561a0c8db99efa4b3673d017d4dc1c00b88f
 
 
