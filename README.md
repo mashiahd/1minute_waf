@@ -42,33 +42,37 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 
 ### Host/VM
 
-Option 1:
+#### Option 1:
 Download and install via bash on you local machine:
 
 ```bash
 sudo bash -c "$(wget -qLO - https://github.com/mashiahd/1minute_waf/blob/main/platform/vm/modsec-nginx.sh)"
 ```
 
-Option 2:
+#### Option 2:
+```bash
 git clone https://github.com/mashiahd/1minute_waf.git
 cd ./1minute_waf/platform/vm
 chmod +x modsec-nginx.sh
 sudo ./modsec-nginx.sh [options]
+```
 
 ### Proxmox VE (lxc)
 
-Option 1:
+#### Option 1:
 Download and install via bash on lxc conatiner (Linux Container):
 
 ```bash
 sudo bash -c "$(wget -qLO - https://github.com/mashiahd/1minute_waf/blob/main/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
 ```
 
-Option 2:
+#### Option 2:
+```bash
 git clone https://github.com/mashiahd/1minute_waf.git
 cd ./1minute_waf/platform/proxmox_ct
 chmod +x modsec_nginx_proxmox.sh
 sudo ./modsec_nginx_proxmox.sh [options]
+```
 
 ## Usage
 If repository cloned run the script with or without command-line arguments:
