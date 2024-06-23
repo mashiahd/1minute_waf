@@ -3,7 +3,7 @@
 # Author: David Netanel Mashiah (mashiahd)
 # License: GNU General Public License v3.0
 # https://github.com/mashiahd/1minute_waf/LICENSE
-source <(curl -s https://github.com/mashiahd/1minute_waf/blob/main/misc/utils.func)
+source <(curl -s https://raw.githubusercontent.com/mashiahd/1minute_waf/main/misc/utils.func)
 
 current_dir=$(pwd)
 log_file="$current_dir/1minwaf_install.log"
