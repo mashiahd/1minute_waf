@@ -3,7 +3,7 @@
 # Author: David Netanel Mashiah (mashiahd)
 # License: GNU General Public License v3.0
 # https://github.com/mashiahd/1minute_waf/LICENSE
-source <(curl -s https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/misc/utils.func)
+source <(curl -s https://raw.githubusercontent.com/mashiahd/1minute_waf/main/misc/utils.func)
 
 current_dir=$(pwd)
 log_file="$current_dir/1minwaf_install.log"
@@ -22,7 +22,7 @@ HOSTNAME="modsec-nginx"
 STORAGE="local-lvm"
 TEMPLATE_FILENAME="ubuntu-22.04-standard_22.04-1_amd64.tar.zst"
 FULL_TEMPLATE="local:vztmpl/$TEMPLATE_FILENAME"
-SCRIPT_URL="https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/platform/vm/modsec_nginx.sh"
+SCRIPT_URL="https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/vm/modsec_nginx.sh"
 SCRIPT_NAME="modsec_nginx.sh"
 
 log_info "Preparing Environment..."
