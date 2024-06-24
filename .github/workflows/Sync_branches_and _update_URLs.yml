@@ -15,8 +15,8 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config --global user.name "David Netanel Mashiah"
+          git config --global user.email "david@mashiahs.com"
 
       - name: Update URLs for main branch
         if: github.ref == 'refs/heads/main'
