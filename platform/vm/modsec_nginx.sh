@@ -40,7 +40,7 @@ if [ "$curl_successful" != true ]; then
     fi
 fi
 
-# Display the banner
+# Clear Screen & Display the banner
 clear
 display_banner
 
