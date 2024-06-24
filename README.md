@@ -12,6 +12,7 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
   - [Installation](#installation)
     - [Host/VM](#hostvm)
     - [Proxmox VE (lxc)](#proxmox-ve-lxc)
+    - [DEV Enviroment](#dev-enviroment)
   - [Usage](#usage)
     - [Command Line Arguments](#command-line-arguments)
     - [Default Values](#default-values)
@@ -69,6 +70,42 @@ sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_w
 #### Option 2:
 ```bash
 git clone https://github.com/mashiahd/1minute_waf.git
+cd ./1minute_waf/platform/proxmox_ct
+chmod +x modsec_nginx_proxmox.sh
+sudo ./modsec_nginx_proxmox.sh [options]
+```
+
+### DEV Enviroment
+
+#### Option 1:
+
+##### Host/VM
+
+Download and install via bash on lxc conatiner (Linux Container):
+
+```bash
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/platform/vm/modsec_nginx.sh)"
+```
+
+#### Option 2:
+```bash
+git clone --single-branch --branch develop https://github.com/mashiahd/1minute_waf.git
+cd ./1minute_waf/platform/vm
+chmod +x modsec_nginx.sh
+sudo ./modsec_nginx.sh [options]
+```
+
+##### Proxmox VE (lxc)
+
+Download and install via bash on lxc conatiner (Linux Container):
+
+```bash
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
+```
+
+#### Option 2:
+```bash
+git clone --single-branch --branch develop https://github.com/mashiahd/1minute_waf.git
 cd ./1minute_waf/platform/proxmox_ct
 chmod +x modsec_nginx_proxmox.sh
 sudo ./modsec_nginx_proxmox.sh [options]
