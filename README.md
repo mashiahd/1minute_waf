@@ -35,7 +35,7 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 - A Proxmox VE 7.4-11 (Version 8 not tested yet)
 
 ## Prerequisites
-
+- wget installed
 - Root privileges for installation
 - Network connection for downloading necessary files
 
