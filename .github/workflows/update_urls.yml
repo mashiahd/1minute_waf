@@ -1,19 +1,19 @@
-name: Update URLs after merge to main
+name: Update URLs after rebase
 
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   update-urls:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout develop branch
         uses: actions/checkout@v2
 
-      - name: Replace URLs in specified files
+      - name: Replace URLs in files
         run: |
           # Define the files to include and exclude
           include_files=("platform/vm/modsec_nginx.sh" "platform/proxmox_ct/modsec_nginx_proxmox.sh")
@@ -32,6 +32,6 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m "Update URLs from develop to main"
-          git push origin main
+          git push origin develop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
