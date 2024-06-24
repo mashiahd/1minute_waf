@@ -1,0 +1,37 @@
+name: Update URLs after merge to main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-urls:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Replace URLs in specified files
+        run: |
+          # Define the files to include and exclude
+          include_files=("platform/vm/modsec_nginx.sh" "platform/proxmox_ct/modsec_nginx_proxmox.sh")
+          exclude_files=("README.md")
+          
+          # Replace URLs in included files, skipping the excluded files
+          for file in "${include_files[@]}"; do
+            if [[ ! " ${exclude_files[@]} " =~ " ${file} " ]]; then
+              sed -i 's|https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/|https://raw.githubusercontent.com/mashiahd/1minute_waf/main/|g' "$file"
+            fi
+          done
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Update URLs from develop to main"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
