@@ -13,7 +13,7 @@ echo -e "\033[1;34m[i] Downloading utils file\033[0m"
 
 # Try to source the script using curl if available
 if command -v curl &> /dev/null; then
-    if ! source <(curl -s https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/misc/utils.func); then
+    if ! source <(curl -s https://raw.githubusercontent.com/mashiahd/1minute_waf/main/misc/utils.func); then
         echo -e "\033[0;33m[!] Failed to download utils.func using curl\033[0m"
         curl_successful=false
     else
@@ -28,7 +28,7 @@ fi
 # If curl attempt failed or curl is not available, try using wget
 if [ "$curl_successful" != true ]; then
     echo -e "\033[1;34m[i] Downloading utils.func file using wget\033[0m"
-    wget -q -O utils.func https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/misc/utils.func
+    wget -q -O utils.func https://raw.githubusercontent.com/mashiahd/1minute_waf/main/misc/utils.func
 
     # Source the downloaded script
     if [ -f utils.func ]; then
