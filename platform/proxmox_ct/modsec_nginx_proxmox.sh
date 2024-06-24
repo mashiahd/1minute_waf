@@ -22,7 +22,7 @@ HOSTNAME="modsec-nginx"
 STORAGE="local-lvm"
 TEMPLATE_FILENAME="ubuntu-22.04-standard_22.04-1_amd64.tar.zst"
 FULL_TEMPLATE="local:vztmpl/$TEMPLATE_FILENAME"
-SCRIPT_URL="https://github.com/mashiahd/1minute_waf/blob/main/platform/vm/modsec-nginx.sh"
+SCRIPT_URL="https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/vm/modsec-nginx.sh"
 SCRIPT_NAME="modsec-nginx.sh"
 
 log_info "Preparing Environment..."
