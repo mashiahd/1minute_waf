@@ -47,7 +47,7 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 Download and install via bash on you local machine:
 
 ```bash
-sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/vm/modsec_nginx.sh)"
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/platform/vm/modsec_nginx.sh)"
 ```
 
 #### Option 2:
@@ -64,7 +64,7 @@ sudo ./modsec_nginx.sh [options]
 Download and install via bash on lxc conatiner (Linux Container):
 
 ```bash
-sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
 ```
 
 #### Option 2:
