@@ -1,8 +1,9 @@
-name: Update URLs after rebase
+name: Update URLs based on branch
 
 on:
   push:
     branches:
+      - main
       - develop
 
 jobs:
@@ -10,28 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout develop branch
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Replace URLs in files
+      - name: Update URLs for main branch
+        if: github.ref == 'refs/heads/main'
         run: |
-          # Define the files to include and exclude
-          include_files=("platform/vm/modsec_nginx.sh" "platform/proxmox_ct/modsec_nginx_proxmox.sh")
-          exclude_files=("README.md")
-          
-          # Replace URLs in included files, skipping the excluded files
-          for file in "${include_files[@]}"; do
-            if [[ ! " ${exclude_files[@]} " =~ " ${file} " ]]; then
-              sed -i 's|https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/|https://raw.githubusercontent.com/mashiahd/1minute_waf/main/|g' "$file"
-            fi
-          done
+          find . -type f ! -name "README.md" -exec sed -i 's|https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/|https://raw.githubusercontent.com/mashiahd/1minute_waf/main/|g' {} +
+
+      - name: Update URLs for develop branch
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          find . -type f ! -name "README.md" -exec sed -i 's|https://raw.githubusercontent.com/mashiahd/1minute_waf/main/|https://raw.githubusercontent.com/mashiahd/1minute_waf/develop/|g' {} +
 
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Update URLs from develop to main"
-          git push origin develop
+          git commit -m "Update URLs based on branch"
+          git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
