@@ -17,6 +17,7 @@ if command -v curl &> /dev/null; then
         echo -e "\033[0;33m[!] Failed to download utils.func using curl\033[0m"
         curl_successful=false
     else
+		echo -e "\033[1;34m[i] utils.func file downloaded successfully\033[0m"
         curl_successful=true
     fi
 else
@@ -38,7 +39,6 @@ if [ "$curl_successful" != true ]; then
         exit 1
     fi
 fi
-exit 1
 
 # Display the banner
 clear
