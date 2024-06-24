@@ -12,7 +12,7 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
   - [Installation](#installation)
     - [Host/VM](#hostvm)
     - [Proxmox VE (lxc)](#proxmox-ve-lxc)
-    - [DEV Enviroment](#dev-enviroment)
+    - [Cloning](#cloning)
   - [Usage](#usage)
     - [Command Line Arguments](#command-line-arguments)
     - [Default Values](#default-values)
@@ -32,7 +32,8 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 ## Support Operating Systems
 
 - A debain linux-based operating system (tested on ubuntu 22.04.01)
-- A Proxmox VE 7.4-11 (Version 8 not tested yet)
+- A Proxmox VE 7.4-11 Minimum
+- A Proxmox VE 8 Is in Testing
 
 ## Prerequisites
 - wget installed
@@ -42,81 +43,41 @@ This repository contains a bash script for installing Nginx with ModSecurity 3 s
 ## Installation
 
 ### Host/VM
-
-#### Option 1:
-Download and install via bash on you local machine:
+Download and install via bash on your local machine:
 
 ```bash
 sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/vm/modsec_nginx.sh)"
 ```
+[Running With Default Values](#default-values)
+### Proxmox VE (lxc)
+Download and install via bash on lxc conatiner (Linux Container):
 
-#### Option 2:
 ```bash
-git clone https://github.com/mashiahd/1minute_waf.git
-cd ./1minute_waf/platform/vm
-chmod +x modsec_nginx.sh
-sudo ./modsec_nginx.sh [options]
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
 ```
+[Running With Default Values](#default-values)
+
+### Cloning
+If repository cloned run the script with or without command-line arguments:
+
+#### Host/VM
+
+```bash
+sudo chmod +x ./plaform/vm/modsec_nginx.sh
+sudo ./plaform/vm/modsec_nginx.sh [options]
+```
+> [!NOTE]
+> The script still calls utils.func from this github - will be fixed.
 
 ### Proxmox VE (lxc)
 
-#### Option 1:
-Download and install via bash on lxc conatiner (Linux Container):
-
 ```bash
-sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
+sudo chmod +x ./plaform/proxmox_ct/modsec_nginx_proxmox.sh
+sudo ./plaform/proxmox_ct/modsec_nginx_proxmox.sh [options]
 ```
+> [!NOTE]
+> The script still calls utils.func and modsec_nginx.sh from this github - will be fixed.
 
-#### Option 2:
-```bash
-git clone https://github.com/mashiahd/1minute_waf.git
-cd ./1minute_waf/platform/proxmox_ct
-chmod +x modsec_nginx_proxmox.sh
-sudo ./modsec_nginx_proxmox.sh [options]
-```
-
-### DEV Enviroment
-
-#### Option 1:
-
-##### Host/VM
-
-Download and install via bash on lxc conatiner (Linux Container):
-
-```bash
-sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/vm/modsec_nginx.sh)"
-```
-
-#### Option 2:
-```bash
-git clone --single-branch --branch develop https://github.com/mashiahd/1minute_waf.git
-cd ./1minute_waf/platform/vm
-chmod +x modsec_nginx.sh
-sudo ./modsec_nginx.sh [options]
-```
-
-##### Proxmox VE (lxc)
-
-Download and install via bash on lxc conatiner (Linux Container):
-
-```bash
-sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/mashiahd/1minute_waf/main/platform/proxmox_ct/modsec_nginx_proxmox.sh)"
-```
-
-#### Option 2:
-```bash
-git clone --single-branch --branch develop https://github.com/mashiahd/1minute_waf.git
-cd ./1minute_waf/platform/proxmox_ct
-chmod +x modsec_nginx_proxmox.sh
-sudo ./modsec_nginx_proxmox.sh [options]
-```
-
-## Usage
-If repository cloned run the script with or without command-line arguments:
-
-```bash
-sudo ./modsec-nginx.sh [options]
-```
 
 ### Command Line Arguments
 `-auto_restart <yes|no>`     Auto services restart (default: yes)
