@@ -73,7 +73,7 @@ while [[ "$#" -gt 0 ]]; do
         -auto_restart) auto_restart="$2"; shift ;;
         -remove_nginx) remove_nginx="$2"; shift ;;
         -nginx_ver) nginx_ver="$2"; shift ;;
-        -modsec_ver) modsec_ver="v$2"; shift ;;
+        -modsec_ver) modsec_ver="$2"; shift ;;
         -h|-?|--help) print_help; exit 0 ;;
         *) echo "Unknown parameter passed: $1"; print_help; exit 1 ;;
     esac
