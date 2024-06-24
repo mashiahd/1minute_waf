@@ -32,4 +32,4 @@ jobs:
           git commit -m "Update URLs based on branch"
           git push origin HEAD
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
