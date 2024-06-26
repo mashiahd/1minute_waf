@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/mashiahd/1minute_waf/main/img/logo.jpg" alt="logo" width="200"/>
+
 # 1-Minute WAF Installer
 
 This repository contains a bash script for installing Nginx with ModSecurity 3 support. The script also includes features for checking and managing previous Nginx installations, and supports automatic service restarts.
