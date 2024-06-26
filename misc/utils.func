@@ -73,7 +73,7 @@ check_disk_usage() {
 
 # This function sets the description of the container.
 description() {
-  pct set "$CT_ID" -description "<div align='center'><a href='https://github.com/mashiahd/1minute_waf' target='_blank' rel='noopener noreferrer'><img src='https://github.com/mashiahd/1minute_waf/blob/main/img/modsec_transparent.png'/></a>
+  pct set "$CT_ID" -description "<div align='center'><a href='https://github.com/mashiahd/1minute_waf' target='_blank' rel='noopener noreferrer'><img src='https://github.com/mashiahd/1minute_waf/blob/main/img/logo.jpg'/></a>
 
   # ModSec-Nginx LXC
 
